@@ -1,4 +1,4 @@
-export type NodeType = 'action' | 'branch' | 'end';
+export type NodeType = 'start' | 'menu' | 'tags' | 'text-message' | 'end';
 
 export interface NodeData {
   id: string;
@@ -12,6 +12,13 @@ export interface NodeData {
     x: number;
     y: number;
   };
+  // Menu node specific
+  question?: string;
+  options?: string[];
+  // Tags node specific
+  tags?: string[];
+  // Text message node specific
+  messageContent?: string;
 }
 
 export interface WorkflowState {
